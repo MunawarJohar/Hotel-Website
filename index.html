@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Munawar Johar Hotel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<style>
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.h-font {
+    font-family: 'Merienda', cursive;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+</style>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand me-5 fm-bold fs-3 h-font" href="index.php">MJ Hotel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active me-2" aria-current="page" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" me-2 href="#">Rooms</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link me-2" href="#">Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-2" href="#">About us </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-2" href="#">Contact us</a>
+                    </li>
+
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-outline-dark shadow-none me-lg-3 me-3" data-bs-toggle="modal"
+                        data-bs-target="#LoginModal">Login</button>
+                    <button class="btn btn-outline-dark shadow-none me-lg-3 me-3" data-bs-toggle="modal"
+                        data-bs-target="#Register">Register Now</button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="LoginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex align-items-center">
+                    <h5 class="modal-title" id="LoginModalLabel"> <i class="bi bi-person-circle fs-3 me-3"></i> User
+                        Login</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                anyone.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <button type="submit" class="btn btn-primary text-decoration-none">Login</button>
+                            <a href="javascript:void(0)">Forgot Password</a>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-secondary shadow-none" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Register Modal -->
+    <!-- Register Modal -->
+    <div class="modal fade" id="Register" tabindex="-1" aria-labelledby="LoginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header d-flex align-items-center">
+                    <h5 class="modal-title"><i class="bi bi-person-add"></i> Register User</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                        anyone.</small>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="number" class="form-control" id="phone">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pincode" class="form-label">Pincode</label>
+                                    <input type="text" class="form-control" id="pincode">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="photo" class="form-label">Photo</label>
+                                    <input type="file" class="form-control" id="photo">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="dob" class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control" id="dob">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirmPassword">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Address</label>
+                                    <textarea class="form-control" id="address" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carousel  -->
+    <div id="carouselExample" class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/carousel/IMG_15372.png" class="d-block w-100 h-50 object-fit-cover" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/IMG_40905.png" class="d-block w-100 h-50 object-fit-cover" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/IMG_55677.png" class="d-block w-100 h-50 object-fit-cover" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- forms  -->
+
+    <div class="container mt-2 mb-5">
+        <div class="row">
+            <div class="col-lg-12 bg-white shadow p-4 rounded">
+                <h5>Check Booking Availability</h5>
+                <form>
+                    <div class="row g-3">
+                        <div class="col-lg-3">
+                            <label class="form-label">Check-in</label>
+                            <input type="date" class="form-control" id="checkindate">
+                        </div>
+                        <div class="col-lg-3">
+                            <label class="form-label">Check-out</label>
+                            <input type="date" class="form-control" id="checkoutdate">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="selectLabel" class="form-label">Select Options:</label>
+                            <select class="form-select" id="selectLabel">
+                                <option value="1" selected>Adult</option>
+                                <option value="2">Young</option>
+                                <option value="3">Mam</option>
+                                <option value="4">Monen</option>
+                            </select>
+                        </div>
+
+                        <div class="col-lg-2">
+                            <label for="cselectLabel" class="form-label">Children</label>
+                            <select class="form-select" id="cselectLabel">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-1 align-self-end">
+                            <button type="submit" class="btn btn-primary w-100">Check</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rooms  -->
+    <h2 class="mt-5 pt-4 text-center fw-bold h-font">Our Romms</h2>
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 my-3">
+                <div class="card bg-white shadow p-4 rounded " style="max-width: 350px; margin:auto;">
+                    <img src="images/rooms/1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Simple Room Name</h5>
+                        <h6 class="mb-1 badge rounded-pill bg-light text-dark text-wrap">200 price</h6>
+                        <div class="features mb-4">
+                            <h6 class="mb-1">Features</h6>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">2 Rooms</span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">2 baths</span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">1 AC</span>
+                        </div>
+                        <div class="facilities mb-4">
+                            <h6 class="mb-1">Facilities</h6>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">24/7 Security</span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">Fresh Foods</span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">24/7 Light & Wifi</span>
+                        </div>
+                        <div class="rating mb-4">
+                            <h6 class="mb-1">Rating</h6>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <div class="d-flex justify-content-evenly">
+                            <a href="#" class="btn btn-success btn-sm">Book Now</a>
+                            <a href="#" class="btn btn-success btn-sm">More Details</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 my-3">
+                <div class="card bg-white shadow p-4 rounded " style="max-width: 350px; margin:auto;">
+                    <img src="images/rooms/IMG_11892.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Simple Room Name</h5>
+                        <h6 class="mb-1 badge rounded-pill bg-light text-dark text-wrap">200 price</h6>
+                        <div class="features mb-4">
+                            <h6 class="mb-1">Features</h6>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">2 Rooms</span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">2 baths</span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">1 AC</span>
+                        </div>
+                        <div class="facilities mb-4">
+                            <h6 class="mb-1">Facilities</h6>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">24/7 Security</span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">Fresh Foods</span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">24/7 Light & Wifi</span>
+                        </div>
+                        <div class="rating mb-4">
+                            <h6 class="mb-1">Rating</h6>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <div class="d-flex justify-content-evenly">
+                            <a href="#" class="btn btn-success btn-sm">Book Now</a>
+                            <a href="#" class="btn btn-success btn-sm">More Details</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 my-3">
+                <div class="card bg-white shadow p-4 rounded " style="max-width: 350px; margin:auto;">
+                    <img src="images/rooms/IMG_39782.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Simple Room Name</h5>
+                        <h6 class="mb-1 badge rounded-pill bg-light text-dark text-wrap">200 price</h6>
+                        <div class="features mb-4">
+                            <h6 class="mb-1">Features</h6>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">2 Rooms</span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">2 baths</span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">1 AC</span>
+                        </div>
+                        <div class="facilities mb-4">
+                            <h6 class="mb-1">Facilities</h6>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">24/7 Security</span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">Fresh Foods</span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap">24/7 Light & Wifi</span>
+                        </div>
+                        <div class="rating mb-4">
+                            <h6 class="mb-1">Rating</h6>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <div class="d-flex justify-content-evenly">
+                            <a href="#" class="btn btn-success">Book Now</a>
+                            <a href="#" class="btn btn-success">More Details</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 text-center mt-5">
+                <a href="" class="btn btn-sm btn-outline-dark rounded-0 fw-bold  ">More Rooms</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- facilities  -->
+    <h2 class="mt-5 pt-4 text-center fw-bold h-font">Our Facilities</h2>
+    <div class="container">
+        <div class="row justify-content-evenly px-lg-2 px-md-2 px-5">
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/IMG_27079.svg" alt="loading" width="80p">
+                <h5 class="mt-3">Gas </h5>
+            </div>
+
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/IMG_41622.svg" alt="loading" width="80p">
+                <h5 class="mt-3">Tv</h5>
+            </div>
+
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/IMG_43553.svg" alt="loading" width="80p">
+                <h5 class="mt-3">Wifi</h5>
+            </div>
+
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/IMG_49949.svg" alt="loading" width="80p">
+                <h5 class="mt-3">AC</h5>
+            </div>
+
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/IMG_96423.svg" alt="loading" width="80p">
+                <h5 class="mt-3">Transport</h5>
+            </div>
+
+        </div>
+        <div class="col-lg-12 text-center mt-5">
+            <a href="" class="btn btn-sm btn-outline-dark rounded-0 fw-bold  ">More Facilities</a>
+        </div>
+    </div>
+
+    <!-- testimonials -->
+    <h2 class="mt-5 pt-4 text-center fw-bold h-font">Testimonials</h2>
+    <div class="container mt-5">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper mb-5">
+
+                <div class="swiper-slide bg-white p-4">
+                    <div class="profile d-flex align-items-center p-4">
+                        <img src="images/profile.png" alt="loading" width="50px">
+                        <h6 class="m-0 ms-2">Munawaar Johar</h6>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat quo ea, molestias vero illo
+                        inventore magni a? Voluptatem, eligendi culpa.</p>
+                    <div class="rating">
+                        <h6 class="mb-1">Rating</h6>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide bg-white p-4">
+                    <div class="profile d-flex align-items-center p-4">
+                        <img src="images/profile.png" alt="loading" width="50px">
+                        <h6 class="m-0 ms-2">Munawaar Johar</h6>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat quo ea, molestias vero illo
+                        inventore magni a? Voluptatem, eligendi culpa.</p>
+                    <div class="rating">
+                        <h6 class="mb-1">Rating</h6>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide bg-white p-4">
+                    <div class="profile d-flex align-items-center p-4">
+                        <img src="images/profile.png" alt="loading" width="50px">
+                        <h6 class="m-0 ms-2">Munawaar Johar</h6>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat quo ea, molestias vero illo
+                        inventore magni a? Voluptatem, eligendi culpa.</p>
+                    <div class="rating">
+                        <h6 class="mb-1">Rating</h6>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="col-lg-12 text-center mt-5">
+            <a href="" class="btn btn-sm btn-outline-dark rounded-0 fw-bold  ">More Reviews</a>
+        </div>
+    </div>
+
+    <!-- Reach us  -->
+    <h2 class="mt-5 pt-4 text-center fw-bold h-font">REACH US </h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 p-4 mb-lg-0  mb-3 bg-white rounded">
+                <iframe class="w-100 rounded" height="320px"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d208324.025999554!2d75.3977926779643!3d35.329259344723084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e46392bac10283%3A0xc2f7a786f9833d7!2sSkardu!5e0!3m2!1sen!2s!4v1708173694743!5m2!1sen!2s"
+                    style="border:0; height:450px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="bg-white p-4 rounded mb-4">
+                    <h5>Call us </h5>
+                    <a href="tel:+923555791615" class="d-inline-block mb-2 text-decoration-none text-dark"> <i
+                            class="bi bi-telephone-forward-fill"></i> +923555791615</a>
+                </div>
+
+                <div class="bg-white rounded  p-4 mb-4">
+                    <h5>Follow Us </h5>
+                    <a href="#" class="d-inline-block mb-3">
+                        <span class="badge bg-light text-dark fs-6 p-10"><i class="bi bi-instagram me-1"></i>
+                            Instagram</span>
+                    </a>
+
+                    <a href="#" class="d-inline-block mb-3">
+                        <span class="badge bg-light text-dark fs-6 p-10"><i class="bi bi-linkedin me-1"></i>
+                            LinkedIn</span>
+                    </a>
+                    <br>
+                    <a href="#" class="d-inline-block mb-3">
+                        <span class="badge bg-light text-dark fs-6 p-10"><i class="bi bi-facebook me-1"></i>
+                            Facebook</span>
+                    </a>
+
+                    <a href="#" class="d-inline-block mb-3">
+                        <span class="badge bg-light text-dark fs-6 p-10"><i class="bi bi-whatsapp me-1"></i>
+                            whatsapp</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-white mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 p-4">
+                <h3 class="h-font fw-bold fs-3 mb-2">Munawar Johar Hotel</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vel reiciendis commodi maiores repellat!</p>
+            </div>
+            <div class="col-lg-4 p-4">
+                <h5 class="mb-3">Links</h5>
+                <a href="#" class="d-block mb-2 text-decoration-none">HOME</a>
+                <a href="#" class="d-block mb-2 text-decoration-none">Contact us</a>
+                <a href="#" class="d-block mb-2 text-decoration-none">More</a>
+                <a href="#" class="d-block mb-2 text-decoration-none">Reach us</a>
+            </div>
+            <div class="col-lg-4 p-4">
+                <h3 class="mb-3">Follow Us</h3>
+                <a href="#" class="d-block mb-3">
+                    <span class="badge bg-light text-dark fs-6 p-10"><i class="bi bi-instagram me-1"></i>Instagram</span>
+                </a>
+                <a href="#" class="d-block mb-3">
+                    <span class="badge bg-light text-dark fs-6 p-10"><i class="bi bi-facebook me-1"></i></>Facebook</span>
+                </a>
+                <a href="#" class="d-block mb-3">
+                    <span class="badge bg-light text-dark fs-6 p-10"><i class="bi bi-whatsapp me-1"></i>Whatsapp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <a href="#" class="btn btn-primary btn-block back-to-top mb-1" role="button">
+                    <i class="bi bi-arrow-up-circle"></i> Back to Top
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer bottom -->
+<footer class="bg-dark text-white p-3 m-0">
+    <div class="container text-center">
+        <h6 class="m-0">Design and Developed by MunawarJohar</h6>
+    </div>
+</footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+-->
+    <script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        loop: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        breakpoints: {
+            328: {
+                slidesPerView: 1,
+            },
+            648: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>
